@@ -2,4 +2,4 @@
 
 浮窗、毛玻璃、半透明、吸附效果。调整毛玻璃的模糊程度。
 
-![img](https://github.com/dosedo/BlurFloatingButtonDemo/raw/master/gif/HGHjs57P5J.gif) 
+![img](https://upload-images.jianshu.io/upload_images/14458179-0a893810e1b58614.gif?imageMogr2/auto-orient/strip) 
