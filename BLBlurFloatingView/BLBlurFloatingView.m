@@ -33,9 +33,13 @@
 - (void)layoutSubviews{
     
     [super layoutSubviews];
+    return;
+    
     
     //添加一个白色的背景视图
-    CGFloat wh = self.frame.size.width-20;
+    CGFloat padding = 6;
+    CGFloat w = self.frame.size.width-2*padding;
+    CGFloat h = self.frame.size.height - 2*padding;
     UIView *sd = [self viewWithTag:101];
     if ( !sd ) {
         
@@ -45,9 +49,9 @@
         view.backgroundColor = [UIColor whiteColor];
         [self addSubview:view];
     }
-    sd.frame = CGRectMake(10, 10, wh, wh);;
+    sd.frame = CGRectMake(padding, padding, w, h);
     sd.layer.masksToBounds = YES;
-    sd.layer.cornerRadius = wh/2;
+    sd.layer.cornerRadius = h/2;
 
     [self sendSubviewToBack:sd];
 }
@@ -231,7 +235,7 @@
 + (BLBlurFloatingView *)showWithOrigin:(CGPoint)origin target:(id)target action:(SEL)action cornerType:(int)type{
     
     BLBlurFloatingView *bfv = [[BLBlurFloatingView alloc] initWithCornerType:type];
-    bfv.frame = CGRectMake(origin.x, origin.y, self.viewWH, self.viewWH);
+    bfv.frame = CGRectMake(origin.x, origin.y, self.viewWH*2+10, self.viewWH);
     if( target && action ){
         if( [target respondsToSelector:action] ){
             [bfv.button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
@@ -266,7 +270,7 @@
 }
 
 + (CGFloat)viewWH{
-    return 58;
+    return 56;
 }
 
 - (void)handleBtn{
